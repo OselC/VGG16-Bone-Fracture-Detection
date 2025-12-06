@@ -97,7 +97,7 @@ if model:
             predicted_class, confidence, display_img = predict_image_class(model, uploaded_file)
         
         # Display the uploaded image
-        st.image(display_img, caption='Uploaded X-ray Image', use_container_width=True)
+        st.image(display_img, caption='Uploaded X-ray Image', use_column_width=True)
         st.divider()
 
         if predicted_class:
