@@ -20,7 +20,7 @@ def load_and_cache_model():
     try:
         # Keras 3 (which uses .keras format) handles model loading, but load_model 
         # is still the correct function to call.
-        model = load_model(MODEL_PATH) 
+        model = tf.keras.models.load_model(MODEL_PATH, compile=False) 
         return model
     except Exception as e:
         # Re-raise the error to ensure the Streamlit app shows the failure clearly
@@ -65,7 +65,7 @@ try:
 except Exception as e:
     # If the model load failed, show a simple error message and stop.
     st.error(f"Error loading the model: {e}")
-    st.info("Please ensure the 'model.keras' file is uploaded and accessible in the root directory.")
+    st.info("Please ensure the 'model.h5' file is uploaded and accessible in the root directory.")
     model = None
 
 
