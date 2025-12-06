@@ -1,2 +1,0 @@
-# content of runtime.txt
-python-3.10.9
