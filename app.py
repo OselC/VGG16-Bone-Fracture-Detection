@@ -6,6 +6,12 @@ import numpy as np
 from PIL import Image
 import io
 
+st.set_page_config(
+        page_title="X-ray Fracture Detector",
+        page_icon="🦴",
+        layout="centered"
+    )
+
 # --- Configuration ---
 # Trying an explicit relative path to confirm the file is in the root directory
 MODEL_PATH = 'model.h5'
@@ -70,12 +76,6 @@ except Exception as e:
 
 
 if model:
-    st.set_page_config(
-        page_title="X-ray Fracture Detector",
-        page_icon="🦴",
-        layout="centered"
-    )
-
     st.title("🦴 X-ray Bone Fracture Detection")
     st.markdown(
         """
